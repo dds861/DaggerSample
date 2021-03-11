@@ -6,18 +6,20 @@ import com.dd.daggersample.App
 import com.dd.daggersample.R
 import com.dd.daggersample.models.DatabaseHelper
 import com.dd.daggersample.models.NetworkUtils
+import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var databaseHelper: DatabaseHelper
-    private lateinit var networkUtils: NetworkUtils
+    @Inject
+    lateinit var databaseHelper: DatabaseHelper
+
+    @Inject
+    lateinit var networkUtils: NetworkUtils
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        databaseHelper = App.getAppComponent().getDatabaseHelper()
-        networkUtils = App.getAppComponent().getNetworkUtils()
+        App.getAppComponent().injectMainActivity(this)
 
     }
 }
