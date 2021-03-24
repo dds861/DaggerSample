@@ -7,11 +7,17 @@ import com.dd.daggersample.R
 import com.dd.daggersample.models.DatabaseHelper
 import com.dd.daggersample.models.NetworkUtils
 import javax.inject.Inject
+import javax.inject.Named
 
 class MainActivity : AppCompatActivity() {
 
+    @Named("prod")
     @Inject
     lateinit var databaseHelper: DatabaseHelper
+
+    @Named("test")
+    @Inject
+    lateinit var databaseHelper2: DatabaseHelper
 
     @Inject
     lateinit var networkUtils: NetworkUtils
