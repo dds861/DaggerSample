@@ -6,16 +6,18 @@ import com.dd.daggersample.App
 import com.dd.daggersample.R
 import com.dd.daggersample.models.DatabaseHelper
 import com.dd.daggersample.models.NetworkUtils
+import com.dd.daggersample.qualifiers.DatabaseProd
+import com.dd.daggersample.qualifiers.DatabaseTest
 import javax.inject.Inject
 import javax.inject.Named
 
 class MainActivity : AppCompatActivity() {
 
-    @Named("prod")
+    @DatabaseProd
     @Inject
     lateinit var databaseHelper: DatabaseHelper
 
-    @Named("test")
+    @DatabaseTest
     @Inject
     lateinit var databaseHelper2: DatabaseHelper
 
