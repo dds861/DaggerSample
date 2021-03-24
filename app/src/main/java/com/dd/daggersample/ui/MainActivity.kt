@@ -6,13 +6,13 @@ import com.dd.daggersample.App
 import com.dd.daggersample.R
 import com.dd.daggersample.models.DatabaseHelper
 import com.dd.daggersample.models.NetworkUtils
-import dagger.Lazy
 import javax.inject.Inject
+import javax.inject.Provider
 
 class MainActivity : AppCompatActivity() {
 
     @Inject
-    lateinit var databaseHelper: Lazy<DatabaseHelper>
+    lateinit var databaseHelper: Provider<DatabaseHelper>
 
     @Inject
     lateinit var networkUtils: NetworkUtils
