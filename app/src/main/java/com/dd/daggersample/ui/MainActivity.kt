@@ -6,12 +6,13 @@ import com.dd.daggersample.App
 import com.dd.daggersample.R
 import com.dd.daggersample.models.DatabaseHelper
 import com.dd.daggersample.models.NetworkUtils
+import dagger.Lazy
 import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
 
     @Inject
-    lateinit var databaseHelper: DatabaseHelper
+    lateinit var databaseHelper: Lazy<DatabaseHelper>
 
     @Inject
     lateinit var networkUtils: NetworkUtils
@@ -21,5 +22,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         App.getAppComponent().injectMainActivity(this)
 
+        databaseHelper.get()
     }
 }
