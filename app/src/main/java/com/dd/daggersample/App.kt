@@ -2,6 +2,7 @@ package com.dd.daggersample
 
 import android.app.Application
 import com.dd.daggersample.components.AppComponent
+import com.dd.daggersample.components.DaggerAppComponent
 
 class App : Application() {
 

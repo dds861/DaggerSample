@@ -1,4 +1,7 @@
 package com.dd.daggersample.modules
 
-class MailModule {
+import dagger.Module
+
+@Module
+class MailModule(private val text: String) {
 }
