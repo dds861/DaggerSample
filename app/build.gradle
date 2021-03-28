@@ -48,4 +48,7 @@ dependencies {
 
     implementation 'com.google.dagger:dagger:2.7'
     kapt 'com.google.dagger:dagger-compiler:2.7'
+
+    implementation 'com.google.dagger:dagger-producers:2.7'
+
 }
